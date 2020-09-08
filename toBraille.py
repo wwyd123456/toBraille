@@ -41,7 +41,8 @@ class KanjiToPinyin(object):
         self.break_flag = False
         p = Pinyin()
         self.character = Character(character)
-        pinyin_with_tone = p.get_pinyin(self.character.string, show_tone_marks=True, convert='lower')
+        #pinyin_with_tone = p.get_pinyin(self.character.string, show_tone_marks=True, convert='lower') #旧版
+        pinyin_with_tone = p.get_pinyin(self.character.string, tone_marks=True, convert='lower') #新版
         self.character.pinyin = pinyin_with_tone
         for letter in self.character.pinyin:
             n = 1
